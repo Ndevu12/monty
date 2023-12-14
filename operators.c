@@ -109,7 +109,7 @@ void f_div(stack_t **head, unsigned int counter)
 	int length = 0, temp;
 
 	h = *head;
-	while(h)
+	while (h)
 	{
 		h = h->next;
 		length++;
@@ -134,12 +134,13 @@ void f_div(stack_t **head, unsigned int counter)
  * @counter: line count
  * Return: nothing
  */
-void f_mod(stack_t **head, unsigned int counter){
+void f_mod(stack_t **head, unsigned int counter)
+{
 	stack_t *h;
 	int length = 0, temp;
 
 	h = *head;
-	while(h)
+	while (h)
 	{
 		h = h->next;
 		length++;
