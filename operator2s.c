@@ -7,8 +7,8 @@
  * Return: nothing
  */
 
-h(stack_t **head, unsigned int counter)
-{
+void f_push(stack_t **head, unsigned int counter)
+ {
 	int i, m = 0, flag = 0;
 
 	if (bus.arg)

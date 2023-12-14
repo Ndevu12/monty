@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <fnctl.h>
 #include <string.h>
 #include <ctype.h>
+#include <fcntl.h>
 
 
 /**
@@ -59,6 +59,7 @@ typedef struct bus_s
 bus_t;
 extern bus_t bus;
 
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);

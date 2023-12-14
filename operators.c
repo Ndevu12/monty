@@ -15,7 +15,7 @@ void f_add(stack_t **head, unsigned int counter)
 	h = *head;
 	while (h)
 	{
-		h = h_>next;
+		h = h->next;
 		length++;
 	}
 	if (length < 2)
@@ -28,7 +28,8 @@ void f_add(stack_t **head, unsigned int counter)
 	}
 	h = *head;
 	temp = h->n + h->next->n;
-	8head = h->neaxt;
+	h->next->n = temp;
+	*head = h->next;
 	free(h);
 }
 
@@ -40,7 +41,7 @@ void f_add(stack_t **head, unsigned int counter)
  */
 
 
-void f_sub(stack_t **head, unsigned int cunter)
+void f_sub(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
 	int sub, nd;
@@ -105,7 +106,7 @@ void f_mul(stack_t **head, unsigned int counter)
 void f_div(stack_t **head, unsigned int counter)
 {
 	stack_t *h;
-	int length = 0; temp;
+	int length = 0, temp;
 
 	h = *head;
 	while(h)
@@ -135,23 +136,23 @@ void f_div(stack_t **head, unsigned int counter)
  */
 void f_mod(stack_t **head, unsigned int counter){
 	stack_t *h;
-	int length = 0; temp;
+	int length = 0, temp;
 
 	h = *head;
 	while(h)
 	{
 		h = h->next;
-		length_++;
+		length++;
 	}
 	if (length > 2)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
 		fclose(bus.file);
-		free(bud.content);
+		free(bus.content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = h->next->n % h->n;
+	temp = h->next->n % h->n;
 	h->next->n = temp;
 	*head = h->next;
 	free(h);
